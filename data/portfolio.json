@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "Vasu Garg — Senior Frontend Developer",
+    "description": "Portfolio of Vasu Garg, a Senior Frontend Developer with 3+ years of experience building scalable, user-friendly web applications.",
+    "url": "https://vasugarg.dev",
+    "image": "/og-image.png"
+  },
+  "profile": {
+    "name": "Vasu Garg",
+    "title": "Senior Frontend Developer",
+    "tagline": "I build fast, beautiful & scalable web experiences.",
+    "bio": "Senior Frontend Developer with 3+ years of experience crafting scalable, user-friendly web applications. I care deeply about performance, clean code, and interfaces that just feel right.",
+    "bio2": "When I'm not pushing pixels, I'm exploring anime 🎌, building side projects, or learning something new on the internet.",
+    "location": "Punjab, India",
+    "email": "vasugarg6656@gmail.com",
+    "linkedin": "https://linkedin.com/in/vasu-garg-07",
+    "github": "https://github.com/VasuGarg07",
+    "cv": "/vasu_garg_cv.pdf",
+    "avatar": "/avatar.webp",
+    "available": true
+  },
+  "stats": [
+    { "value": "3+", "label": "Years Exp." },
+    { "value": "5K+", "label": "Monthly Users" },
+    { "value": "8+", "label": "Major Launches" }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": ["JavaScript", "TypeScript", "HTML", "CSS"]
+    },
+    {
+      "category": "Frontend",
+      "items": ["React", "Angular", "Next.js", "Tailwind CSS", "Material UI"]
+    },
+    {
+      "category": "Backend & Data",
+      "items": ["Node.js", "REST APIs", "Firebase", "MongoDB"]
+    },
+    {
+      "category": "Dev Tools",
+      "items": ["Git", "GitHub", "JIRA", "VSCode", "Cursor", "CI/CD"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Senior Software Engineer",
+      "company": "uTrade Solutions",
+      "location": "Punjab, India",
+      "period": "May 2024 - Present",
+      "current": true,
+      "highlights": [
+        "Led design & delivery of responsive, scalable web apps with React.js & TypeScript — 99.9% uptime, 5K+ MAU.",
+        "Built a shared component library cutting development effort by 35%.",
+        "Boosted app performance by 40% via code-splitting, lazy loading & state optimization.",
+        "Maintained 100% CI/CD pipeline compliance through Git/GitHub best practices."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "uTrade Solutions",
+      "location": "Punjab, India",
+      "period": "Jul 2022 - Apr 2024",
+      "current": false,
+      "highlights": [
+        "Delivered cross-platform UIs in Angular & React.js across 8+ major product launches.",
+        "Connected frontend to RESTful APIs and AI-driven services with 99% response accuracy.",
+        "Cut UI bug backlog by 40% over two quarters through systematic debugging.",
+        "Improved maintainability & lowered post-release issues by 25% via enforced Git workflows."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "eKYC Platform",
+      "company": "uTrade Solutions",
+      "type": "work",
+      "emoji": "🪪",
+      "description": "A scalable multi-vendor eKYC platform with live UI updates via Firebase Remote Config, an admin dashboard for KYC status tracking, and integrations with DigiLocker & Digio for automated document retrieval and eSigning.",
+      "highlights": [
+        "Reduced processing time by 35%, improved agent efficiency by 25%",
+        "Automated manual workload by 60% via DigiLocker & Digio SDKs",
+        "80% increase in user satisfaction & faster customer onboarding"
+      ],
+      "stack": ["React", "TypeScript", "Tailwind", "Redux", "Firebase"],
+      "color": "#f0f7ff"
+    },
+    {
+      "name": "uAlgos — Algo Trading Platform",
+      "company": "uTrade Solutions",
+      "type": "work",
+      "emoji": "📈",
+      "description": "An AI-powered algorithmic trading platform featuring a chat-based strategy builder, backtesting system with 85%+ accuracy, AI-driven stock screener, and company analytics dashboard.",
+      "highlights": [
+        "Reduced strategy design time by 40%",
+        "Improved screening speed by 30%, boosted user adoption by 25%",
+        "Resolved 60+ bugs cutting issue resolution time by 40%"
+      ],
+      "stack": ["Angular", "TypeScript", "AI integration", "REST APIs"],
+      "color": "#f5f0ff"
+    },
+    {
+      "name": "Cove Drive — Encrypted Cloud Storage",
+      "company": "uTrade Solutions",
+      "type": "work",
+      "emoji": "🔐",
+      "description": "A zero-knowledge cloud storage system with AES + RSA client-side encryption, password-protected file sharing, multi-format in-app preview, and Google Analytics integration.",
+      "highlights": [
+        "Zero-knowledge architecture — files encrypted before leaving the client",
+        "25% increase in user retention over 6 months",
+        "Supports multiple file types with in-app preview"
+      ],
+      "stack": ["Angular", "AES/RSA Encryption",  "Google Analytics", "TypeScript"],
+      "color": "#fff0fa"
+    },
+    {
+      "name": "Sekai",
+      "company": "Personal Project",
+      "type": "personal",
+      "emoji": "🎌",
+      "description": "An anime bookmarker and watchlist app powered by the AniList GraphQL API. Track what you're watching, discover new series, and manage your anime journey beautifully.",
+      "highlights": [
+        "Integrates with AniList GraphQL API for live anime data",
+        "Full watchlist management — track, bookmark & discover",
+        "Clean, responsive UI built for anime fans"
+      ],
+      "stack": ["React", "AniList API", "GraphQL", "Firebase", "Tailwind"],
+      "live": "https://sekai-arcadia.web.app/",
+      "github": "https://github.com/VasuGarg07/sekai",
+      "color": "#fff8f0"
+    },
+    {
+      "name": "React Lab",
+      "company": "Personal Project",
+      "type": "personal",
+      "emoji": "⚗️",
+      "description": "A showcase of 12+ mini applications built with React, TypeScript & Node.js — demonstrating a wide range of frontend patterns, UI components, and full-stack integrations.",
+      "highlights": [
+        "12+ apps covering diverse use cases and patterns",
+        "Built with React, TypeScript & MERN stack",
+        "Each app is self-contained with its own state & logic"
+      ],
+      "stack": ["React", "TypeScript", "Node.js", "MongoDB", "Express"],
+      "live": "http://react-lab-v2.web.app/",
+      "github": "https://github.com/VasuGarg07/react-lab",
+      "color": "#f0fff8"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Engineering — Computer Science",
+      "institution": "Chandigarh College of Engineering and Technology",
+      "location": "Chandigarh, India",
+      "period": "2018 - 2022",
+      "emoji": "🎓"
+    }
+  ]
+}
