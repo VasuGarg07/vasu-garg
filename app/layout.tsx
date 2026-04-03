@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
   title: data.meta.title,
+  icons: { icon: "/favicon.svg" },
   description: data.meta.description,
   metadataBase: new URL(data.meta.url),
   openGraph: {
