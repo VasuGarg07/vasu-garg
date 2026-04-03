@@ -31,7 +31,7 @@
     },
     {
       "category": "Frontend",
-      "items": ["React", "Angular", "Next.js", "Tailwind CSS", "Material UI"]
+      "items": ["React", "Angular", "Tailwind CSS", "Material UI"]
     },
     {
       "category": "Backend & Data",
@@ -39,7 +39,7 @@
     },
     {
       "category": "Dev Tools",
-      "items": ["Git", "GitHub", "JIRA", "VSCode", "Cursor", "CI/CD"]
+      "items": ["Git", "GitHub", "JIRA", "VSCode", "Cursor"]
     }
   ],
   "experience": [
@@ -117,7 +117,7 @@
       "name": "Sekai",
       "company": "Personal Project",
       "type": "personal",
-      "emoji": "🎌",
+      "emoji": "⛩️",
       "description": "An anime bookmarker and watchlist app powered by the AniList GraphQL API. Track what you're watching, discover new series, and manage your anime journey beautifully.",
       "highlights": [
         "Integrates with AniList GraphQL API for live anime data",
@@ -133,7 +133,7 @@
       "name": "React Lab",
       "company": "Personal Project",
       "type": "personal",
-      "emoji": "⚗️",
+      "emoji": "🧩",
       "description": "A showcase of 12+ mini applications built with React, TypeScript & Node.js — demonstrating a wide range of frontend patterns, UI components, and full-stack integrations.",
       "highlights": [
         "12+ apps covering diverse use cases and patterns",

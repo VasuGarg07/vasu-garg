@@ -3,7 +3,7 @@ export default function Projects({ projects }: { projects: any[] }) {
   const personal = projects.filter(p => p.type === "personal");
 
   return (
-    <section id="projects" className="p-section p-reveal">
+    <section id="projects" className="p-section section-reveal">
       <div className="p-container">
         <div className="p-sec-head">
           <span className="p-tag p-tag--pink">Projects</span>
