@@ -1,6 +1,6 @@
 export default function About({ profile, stats }: { profile: any; stats: any[] }) {
   return (
-    <section id="about" className="p-section p-reveal">
+    <section id="about" className="p-section section-reveal">
       <div className="p-container">
         <div className="p-sec-head">
           <span className="p-tag p-tag--green">About</span>

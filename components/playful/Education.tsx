@@ -1,7 +1,7 @@
 export default function Education({ education }: { education: any[] }) {
   const cardColors = ["b","p", "y"];
   return (
-    <section id="education" className="p-section p-reveal">
+    <section id="education" className="p-section section-reveal">
       <div className="p-container">
         <div className="p-sec-head">
           <span className="p-tag p-tag--green">Education</span>

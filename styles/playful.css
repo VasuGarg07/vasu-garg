@@ -362,20 +362,50 @@ h1.p-hero__title em::after {
 .p-proj-link--muted { color: #aaa; border-color: #ddd; font-style: italic; }
 
 /* ---------- SKILLS ---------- */
-.p-skill-group { margin-bottom: 1.8rem; }
+.p-skill-group { margin-bottom: 2rem; }
 .p-skill-group__title {
   font-size: .72rem; font-weight: 800; text-transform: uppercase;
-  letter-spacing: 2px; color: #666; margin-bottom: .8rem;
+  letter-spacing: 2px; color: #666; margin-bottom: 1rem;
 }
-.p-skill-cloud { display: flex; flex-wrap: wrap; gap: .65rem; }
+.p-skill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
 .p-sk {
-  display: inline-flex; align-items: center;
-  padding: .45rem 1rem; border: 2.5px solid var(--ink); border-radius: 12px;
-  font-weight: 800; font-size: .84rem; background: var(--card);
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .45rem 1rem .45rem .45rem;
+  border: 2.5px solid var(--ink);
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: .84rem;
+  background: var(--card);
   box-shadow: 3px 3px 0 var(--ink);
-  transition: transform .2s, box-shadow .2s; cursor: default;
+  transition: transform .2s, box-shadow .2s;
+  cursor: default;
+  white-space: nowrap;
+  line-height: 1;
 }
-.p-sk:hover { transform: translate(-2px,-2px) rotate(-1.5deg); box-shadow: 6px 6px 0 var(--ink); }
+.p-sk:hover {
+  transform: translate(-2px, -2px) rotate(-1deg);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+/* Colored icon bubble */
+.p-sk__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,0,0,.12);
+  flex-shrink: 0;
+}
+
 .p-sk--y { background: var(--y); }
 .p-sk--p { background: var(--p); color: #fff; }
 .p-sk--b { background: var(--b); color: #fff; }
@@ -455,10 +485,3 @@ h1.p-hero__title em::after {
   font-size: .82rem; font-weight: 700;
   border-top: 2.5px solid var(--ink);
 }
-
-/* ---------- SCROLL REVEAL ---------- */
-/* .p-reveal {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-.p-reveal.p-visible { opacity: 1; transform: translateY(0); } */

@@ -2,8 +2,8 @@
 import { useEffect } from "react";
 
 export function useReveal(
-  revealClass = "p-reveal",
-  visibleClass = "p-visible"
+  revealClass = "section-reveal",
+  visibleClass = "section-visible"
 ) {
   useEffect(() => {
     // Small delay ensures DOM is fully painted

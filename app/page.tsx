@@ -1,6 +1,6 @@
 import { ACTIVE_THEME } from "@/config";
 import PlayfulTheme from "@/app/playful/theme";
-// import DarkTheme    from "@/app/dark/theme";
+import DarkTheme    from "@/app/dark/theme";
 // import MinimalTheme from "@/app/minimal/theme";
 
 // Each theme file imports its own CSS at the top
@@ -8,7 +8,7 @@ import PlayfulTheme from "@/app/playful/theme";
 
 const themes = {
   playful: PlayfulTheme,
-  // dark:    DarkTheme,
+  dark:    DarkTheme,
   // minimal: MinimalTheme,
 } as const;
 

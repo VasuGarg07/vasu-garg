@@ -2,6 +2,6 @@
 import { useReveal } from "@/hooks/useReveal";
 
 export default function RevealWrapper({ children }: { children: React.ReactNode }) {
-  useReveal();  // sets up IntersectionObserver on all .p-reveal elements
+  useReveal();  // sets up IntersectionObserver on all .section-reveal elements
   return <>{children}</>;
 }

@@ -1,7 +1,7 @@
 export default function Experience({ experience }: { experience: any[] }) {
   const dateBadgeColors = ["y","g","p","b"];
   return (
-    <section id="experience" className="p-section p-reveal">
+    <section id="experience" className="p-section section-reveal">
       <div className="p-container">
         <div className="p-sec-head">
           <span className="p-tag p-tag--orange">Experience</span>
