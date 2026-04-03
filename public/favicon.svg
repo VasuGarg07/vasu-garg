@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <style>
+    @media (prefers-color-scheme: light) {
+      .bg   { fill: #111111; }
+      .text { fill: #ffffff; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .bg   { fill: #ffffff; }
+      .text { fill: #111111; }
+    }
+  </style>
+  <circle class="bg" cx="24" cy="24" r="24"/>
+  <text
+    class="text"
+    x="24" y="40"
+    font-family="Georgia, serif"
+    font-size="40"
+    font-weight="700"
+    text-anchor="middle"
+    letter-spacing="-1"
+  >V</text>
+</svg>
