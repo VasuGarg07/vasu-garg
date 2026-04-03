@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import data from "@/data/portfolio.json";
 import "./globals.css";
+import "@/styles/playful.css";
+import "@/styles/dark.css";
+import "@/styles/minimal.css";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
   title: data.meta.title,
@@ -25,7 +29,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
