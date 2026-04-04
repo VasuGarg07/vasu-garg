@@ -4,9 +4,9 @@ import { useTheme } from "@/context/ThemeContext";
 import type { Theme } from "@/config";
 
 const OPTIONS: { value: Theme; label: string; emoji: string }[] = [
-  { value: "playful", label: "Playful",  emoji: "🎨" },
-  { value: "dark",    label: "Dark",     emoji: "🌙" },
-  { value: "minimal", label: "Minimal",  emoji: "✦"  },
+  { value: "playful", label: "Playful", emoji: "🎨" },
+  { value: "dark", label: "Bold", emoji: "🌙" },
+  { value: "minimal", label: "Minimal", emoji: "✦" },
 ];
 
 export default function ThemeSwitcher() {
@@ -29,14 +29,27 @@ export default function ThemeSwitcher() {
             padding: ".5rem 1rem", borderRadius: "999px",
             border: "none", cursor: "pointer", fontSize: ".82rem", fontWeight: 700,
             background: theme === o.value ? "#111" : "#fff",
-            color:      theme === o.value ? "#fff" : "#111",
+            color: theme === o.value ? "#fff" : "#111",
             boxShadow: "0 2px 12px rgba(0,0,0,.15)",
-            transition: "all .15s",
-            whiteSpace: "nowrap",
+            transition: "all .15s", whiteSpace: "nowrap",
           }}
         >
           <span>{o.emoji}</span> {o.label}
-          {theme === o.value && <span style={{fontSize:".65rem",opacity:.7}}>active</span>}
+          {theme === o.value && (
+            <span style={{ position: "relative", display: "inline-flex", width: 8, height: 8 }}>
+              {/* ping ring */}
+              <span style={{
+                position: "absolute", inset: 0,
+                borderRadius: "50%", background: "#22c55e", opacity: .75,
+                animation: "ping 1.2s cubic-bezier(0,0,.2,1) infinite",
+              }} />
+              {/* solid dot */}
+              <span style={{
+                position: "relative", width: 8, height: 8,
+                borderRadius: "50%", background: "#22c55e",
+              }} />
+            </span>
+          )}
         </button>
       ))}
 
