@@ -23,9 +23,9 @@ export default function DarkTheme() {
         <Nav        profile={data.profile} />
         <Hero       profile={data.profile} />
         <About      profile={data.profile} stats={data.stats} />
-        <Projects   projects={data.projects} />
         <Skills     skills={data.skills} />
         <Experience experience={data.experience} />
+        <Projects   projects={data.projects} />
         <Education  education={data.education} />
         <Contact    profile={data.profile} />
         <Footer     name={data.profile.name} />
