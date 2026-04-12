@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const links = ["About", "Projects", "Skills", "Experience", "Education", "Contact"];
+const links = ["About","Skills","Experience","Projects","Education","Contact"];
 
 export default function Nav({ profile }: { profile: any }) {
   const [open, setOpen] = useState(false);
