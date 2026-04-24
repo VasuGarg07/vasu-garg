@@ -1,28 +1,28 @@
 {
   "meta": {
-    "title": "Vasu Garg — Senior Frontend Developer",
-    "description": "Portfolio of Vasu Garg, a Senior Frontend Developer with 3+ years of experience building scalable, user-friendly web applications.",
-    "url": "https://vasugarg.dev",
+    "title": "Vasu Garg — Senior Frontend Engineer",
+    "description": "Portfolio of Vasu Garg, a Senior Frontend Engineer with 4+ years of experience building real-time, AI-integrated web applications.",
+    "url": "https://vasu-garg.vercel.app",
     "image": "/og-image.png"
   },
   "profile": {
     "name": "Vasu Garg",
-    "title": "Senior Frontend Developer",
-    "tagline": "I build fast, beautiful & scalable web experiences.",
-    "bio": "Senior Frontend Developer with 3+ years of experience crafting scalable, user-friendly web applications. I care deeply about performance, clean code, and interfaces that just feel right.",
-    "bio2": "When I'm not pushing pixels, I'm exploring anime ⛩️ or games 🎮, building side projects, or learning something new on the internet.",
+    "title": "Senior Frontend Engineer",
+    "tagline": "I build fast, reliable & production-grade web experiences.",
+    "bio": "Senior Frontend Engineer with 4+ years of experience owning the full frontend lifecycle — from architecture and UI/UX design to production delivery. I care about real-time systems, clean code, and interfaces that make complex data feel simple.",
+    "bio2": "When I'm not shipping, I'm exploring anime ⛩️ or games 🎮, building side projects, or going down internet rabbit holes.",
     "location": "Punjab, India",
     "email": "vasugarg6656@gmail.com",
     "linkedin": "https://linkedin.com/in/vasu-garg-07",
     "github": "https://github.com/VasuGarg07",
-    "cv": "/vasu_garg_cv.pdf",
+    "cv": "/Vasu_Garg_Resume.pdf",
     "avatar": "/avatar.webp",
     "available": true
   },
   "stats": [
-    { "value": "3+", "label": "Years Exp." },
-    { "value": "5K+", "label": "Monthly Users" },
-    { "value": "8+", "label": "Major Launches" }
+    { "value": "4+", "label": "Years Exp." },
+    { "value": "1K+", "label": "New Signups/Qtr" },
+    { "value": "10+", "label": "Major Launches" }
   ],
   "skills": [
     {
@@ -31,15 +31,15 @@
     },
     {
       "category": "Frontend",
-      "items": ["React", "Angular", "Tailwind CSS", "Material UI"]
+      "items": ["React", "Angular", "Redux", "RxJS", "Tailwind CSS", "Material UI"]
     },
     {
       "category": "Backend & Data",
-      "items": ["Node.js", "REST APIs", "Firebase", "MongoDB"]
+      "items": ["Node.js", "Express", "MongoDB", "REST APIs", "WebSockets", "Firebase"]
     },
     {
       "category": "Dev Tools",
-      "items": ["Git", "GitHub", "JIRA", "VSCode", "Cursor"]
+      "items": ["Git", "GitHub Actions", "Mixpanel", "Chargebee", "Firebase Remote Config", "JIRA"]
     }
   ],
   "experience": [
@@ -50,10 +50,10 @@
       "period": "May 2024 - Present",
       "current": true,
       "highlights": [
-        "Led design & delivery of responsive, scalable web apps with React.js & TypeScript — 99.9% uptime, 5K+ MAU.",
-        "Built a shared component library cutting development effort by 35%.",
-        "Boosted app performance by 40% via code-splitting, lazy loading & state optimization.",
-        "Maintained 100% CI/CD pipeline compliance through Git/GitHub best practices."
+        "Owned AI Trading Assistant frontend end-to-end — UI/UX design, state architecture, WebSocket + HTTP services, multi-chat management, LLM response parsing, and YAML editor for AI-generated strategy configuration.",
+        "Built standalone Plans & Pricing platform (React + Node/MongoDB) — configurable subscription plans with monthly/quarterly/yearly billing, credit top-ups, and pack-based purchases; Chargebee integration for payment processing.",
+        "Integrated Mixpanel — designed event tracking schema and captured full user journeys; platform grew by ~800–1,000 new signups in a single quarter.",
+        "Mentored 4 junior engineers on Git workflows, PR standards, and CI/CD practices."
       ]
     },
     {
@@ -63,40 +63,40 @@
       "period": "Jul 2022 - Apr 2024",
       "current": false,
       "highlights": [
-        "Delivered cross-platform UIs in Angular & React.js across 8+ major product launches.",
-        "Connected frontend to RESTful APIs and AI-driven services with 99% response accuracy.",
-        "Cut UI bug backlog by 40% over two quarters through systematic debugging.",
-        "Improved maintainability & lowered post-release issues by 25% via enforced Git workflows."
+        "Built Cove Drive — zero-knowledge cloud storage (AES + RSA encryption), password-protected sharing, chunk-based file handling, and in-app preview for 15+ formats; clean OOP and SOLID architecture directly led to promotion to Senior Engineer.",
+        "Refactored Angular templates into reusable components, reducing bundle size by 35% (400 KB → 260 KB) and measurably improving load performance.",
+        "Delivered eKYC multi-vendor platform — runtime JSON-configurable KYC flows across 6+ B2B white-label clients; Digio + DigiLocker integration for Aadhaar/PAN, eSign, live selfie, and QR mobile handoff — cutting manual workload by 40%.",
+        "Implemented Google Analytics across products — ~500 MAU growth in one quarter; resolved production bugs via JIRA, reducing open bug count 15% QoQ."
       ]
     }
   ],
   "projects": [
     {
+      "name": "AI Trading Assistant",
+      "company": "uTrade Solutions",
+      "type": "work",
+      "emoji": "🤖",
+      "description": "An AI-powered trading assistant built end-to-end — from architecture to delivery. Supports natural language strategy creation, real-time market data via WebSockets, multi-session chat management, and a YAML editor for AI-generated algo configurations.",
+      "highlights": [
+        "Full frontend ownership — UI/UX design, state models, WebSocket + HTTP service layers",
+        "LLM response parsing with context-aware stock analysis tabs",
+        "Platform grew ~800–1,000 new signups in a single quarter post-launch"
+      ],
+      "stack": ["Angular", "TypeScript", "WebSockets", "LLM APIs", "Mixpanel"],
+      "color": "#f0f7ff"
+    },
+    {
       "name": "eKYC Platform",
       "company": "uTrade Solutions",
       "type": "work",
       "emoji": "🪪",
-      "description": "A scalable multi-vendor eKYC platform with live UI updates via Firebase Remote Config, an admin dashboard for KYC status tracking, and integrations with DigiLocker & Digio for automated document retrieval and eSigning.",
+      "description": "A runtime-configurable multi-vendor KYC platform where entire form flows are driven by JSON config — enabling sections to be added, removed, or updated across 6+ B2B white-label clients without redeployment. Feature flags managed via Firebase Remote Config.",
       "highlights": [
-        "Reduced processing time by 35%, improved agent efficiency by 25%",
-        "Automated manual workload by 60% via DigiLocker & Digio SDKs",
-        "80% increase in user satisfaction & faster customer onboarding"
+        "Digio + DigiLocker SDK integration for Aadhaar/PAN upload, eSign, live selfie capture, and silent QR-based mobile handoff",
+        "Cut manual document processing workload by 40%",
+        "White-labelled admin dashboard for agents to manage KYC approvals and offline customer data"
       ],
-      "stack": ["React", "TypeScript", "Tailwind", "Redux", "Firebase"],
-      "color": "#f0f7ff"
-    },
-    {
-      "name": "uAlgos — Algo Trading Platform",
-      "company": "uTrade Solutions",
-      "type": "work",
-      "emoji": "📈",
-      "description": "An AI-powered algorithmic trading platform featuring a chat-based strategy builder, backtesting system with 85%+ accuracy, AI-driven stock screener, and company analytics dashboard.",
-      "highlights": [
-        "Reduced strategy design time by 40%",
-        "Improved screening speed by 30%, boosted user adoption by 25%",
-        "Resolved 60+ bugs cutting issue resolution time by 40%"
-      ],
-      "stack": ["Angular", "TypeScript", "AI integration", "REST APIs"],
+      "stack": ["Angular", "TypeScript", "Tailwind CSS", "Firebase Remote Config", "Digio", "DigiLocker"],
       "color": "#f5f0ff"
     },
     {
@@ -104,27 +104,41 @@
       "company": "uTrade Solutions",
       "type": "work",
       "emoji": "🔐",
-      "description": "A zero-knowledge cloud storage system with AES + RSA client-side encryption, password-protected file sharing, multi-format in-app preview, and Google Analytics integration.",
+      "description": "A zero-knowledge cloud storage product with AES + RSA client-side encryption — users retain sole control of their keys. Built with anonymous and password-protected sharing, chunk-based upload/download for large files, and in-app preview for 15+ file formats.",
       "highlights": [
-        "Zero-knowledge architecture — files encrypted before leaving the client",
-        "25% increase in user retention over 6 months",
-        "Supports multiple file types with in-app preview"
+        "Zero-knowledge architecture — files encrypted before leaving the client, server never sees plaintext",
+        "Complex password-protected anonymous sharing on a zero-knowledge system",
+        "Clean OOP and SOLID architecture recognised internally — directly led to promotion to Senior Engineer"
       ],
-      "stack": ["Angular", "AES/RSA Encryption",  "Google Analytics", "TypeScript"],
+      "stack": ["Angular", "TypeScript", "AES/RSA Encryption", "Material UI", "Google Analytics"],
       "color": "#fff0fa"
+    },
+    {
+      "name": "Plans & Pricing Platform",
+      "company": "uTrade Solutions",
+      "type": "work",
+      "emoji": "💳",
+      "description": "A standalone full-stack subscription platform decoupled from the main app, sharing only authentication. Supports configurable plans with multiple billing frequencies, credit top-ups, and pack-based purchases — all driven by dynamic backend configuration.",
+      "highlights": [
+        "Configurable monthly, quarterly, and yearly billing with credit top-ups and packs",
+        "Chargebee integration for payment processing with fully dynamic plan configuration",
+        "MERN stack — designed data models and full frontend architecture end-to-end"
+      ],
+      "stack": ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Chargebee"],
+      "color": "#f0fff8"
     },
     {
       "name": "Sekai",
       "company": "Personal Project",
       "type": "personal",
       "emoji": "⛩️",
-      "description": "An anime bookmarker and watchlist app powered by the AniList GraphQL API. Track what you're watching, discover new series, and manage your anime journey beautifully.",
+      "description": "An anime catalogue and tracker built as a solo project — browse, search, and manage a personal watchlist with full tracking. Uses the AniList GraphQL API for live anime data, with Firestore persistence and Firebase OAuth.",
       "highlights": [
-        "Integrates with AniList GraphQL API for live anime data",
-        "Full watchlist management — track, bookmark & discover",
-        "Clean, responsive UI built for anime fans"
+        "Full watchlist and tracking management persisted via Firestore",
+        "Redux + TanStack Query for state management and server-state caching",
+        "Converted to a PWA — installable on desktop and mobile"
       ],
-      "stack": ["React", "AniList API", "GraphQL", "Firebase", "Tailwind"],
+      "stack": ["React", "TypeScript", "Redux", "TanStack Query", "Firebase", "PWA"],
       "live": "https://sekai-arcadia.web.app/",
       "github": "https://github.com/VasuGarg07/sekai",
       "color": "#fff8f0"
@@ -134,14 +148,14 @@
       "company": "Personal Project",
       "type": "personal",
       "emoji": "🧩",
-      "description": "A showcase of 12+ mini applications built with React, TypeScript & Node.js — demonstrating a wide range of frontend patterns, UI components, and full-stack integrations.",
+      "description": "A MERN-stack monorepo of 13+ mini apps under a single codebase — shared routing, unified deployment, ranging from simple utilities to full-stack features. CI/CD pipeline via GitHub Actions deploys automatically to Firebase Hosting.",
       "highlights": [
-        "12+ apps covering diverse use cases and patterns",
-        "Built with React, TypeScript & MERN stack",
-        "Each app is self-contained with its own state & logic"
+        "Formlyst — full-stack dynamic form builder with runtime JSON rendering, shareable public URLs, and response persistence in MongoDB",
+        "Super Tic-Tac-Toe — 3×3 meta-board variant with complete rule enforcement",
+        "CI/CD via GitHub Actions → Firebase Hosting; single deployment for all 13+ apps"
       ],
-      "stack": ["React", "TypeScript", "Node.js", "MongoDB", "Express"],
-      "live": "http://react-lab-v2.web.app/",
+      "stack": ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      "live": "https://react-lab-v2.web.app/",
       "github": "https://github.com/VasuGarg07/react-lab",
       "color": "#f0fff8"
     }
