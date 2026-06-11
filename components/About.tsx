@@ -1,32 +1,31 @@
 export default function About({ profile, stats }: { profile: any; stats: any[] }) {
+  const stickyColors = ["y", "p", "b"];
   return (
-    <section id="about" className="p-section section-reveal">
-      <div className="p-container">
-        <div className="p-sec-head">
-          <span className="p-tag p-tag--green">About</span>
-          <h2 className="p-sec-title">A little about me 🙋</h2>
+    <section id="about" className="nb-section">
+      <div className="nb-container">
+        <div className="nb-sec-head">
+          <span className="nb-page-label">PAGE 01 · ABOUT</span>
+          <h2 className="nb-sec-title">Margin notes <mark>about me</mark></h2>
         </div>
-        <div className="p-about__grid">
-          <div className="p-fun-card">
+        <div className="nb-about__grid">
+          <div className="nb-card nb-card--margin nb-about__note">
             <p>{profile.bio}</p>
-            <p style={{marginTop:"0.8rem"}}>{profile.bio2}</p>
-            <div className="p-flair">
-              <span className="p-flair__pill p-flair__pill--y">🎯 Problem Solver</span>
-              <span className="p-flair__pill p-flair__pill--p">🚀 Fast Learner</span>
-              <span className="p-flair__pill p-flair__pill--g">🤝 Team Player</span>
-              <span className="p-flair__pill p-flair__pill--b">💻 Full Stack</span>
+            <p>{profile.bio2}</p>
+            <div className="nb-about__doodles">
+              <span>ships fast, breaks little ✓</span>
+              <span>reads the error message first</span>
+              <span>∞ cups of coffee ☕</span>
             </div>
           </div>
-          <div className="p-stats__grid">
+          <div className="nb-stickies">
             {stats.map((s, i) => (
-              <div key={i} className={`p-stat-box p-stat-box--${["y","p","b","g"][i % 4]}`}>
-                <div className="p-stat-box__num">{s.value}</div>
-                <div className="p-stat-box__label">{s.label}</div>
+              <div key={i} className={`nb-sticky nb-sticky--${stickyColors[i % stickyColors.length]}`}>
+                <div className="nb-sticky__num">{s.value}</div>
+                <div className="nb-sticky__label">{s.label}</div>
               </div>
             ))}
-            <div className="p-stat-box p-stat-box--g">
-              <div className="p-stat-box__num">∞</div>
-              <div className="p-stat-box__label">Cups of ☕</div>
+            <div className="nb-sticky nb-sticky--g">
+              <div className="nb-sticky__hand">don&rsquo;t forget:<br />ship it!</div>
             </div>
           </div>
         </div>

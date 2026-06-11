@@ -1,47 +1,70 @@
 import Image from "next/image";
 
-export default function Hero({ profile }: { profile: any }) {
-    return (
-        <section id="hero" className="p-hero">
-            <div className="p-container">
-                <div className="p-hero__inner">
-                    <div className="p-hero__left">
-                        <div className="p-hero__badge">
-                            {profile.available && <span className="p-hero__dot" />}
-                            {profile.available ? "Open to work" : "Currently busy"}
-                        </div>
-                        <h1 className="p-hero__title">
-                            Hey, I'm<br />
-                            <em>{profile.name}</em> 👋
-                        </h1>
-                        <p className="p-hero__sub">{profile.tagline}</p>
-                        <div className="p-hero__btns">
-                            <a href="#projects" className="p-btn p-btn--y">✦ See my work</a>
-                            <a href={profile.cv} download className="p-btn p-btn--p">⬇ Download CV</a>
-                            <a href="#contact" className="p-btn p-btn--outline">Say hello →</a>
-                        </div>
-                    </div>
-                    {profile.profile_image
-                        ? <Image
-                            src={profile.profile_image}
-                            alt={profile.name}
-                            width={320}
-                            height={320}
-                            sizes="(min-width: 640px) clamp(160px, 26vw, 320px), 0px"
-                            loading="lazy"
-                            className="p-hero__avatar"
-                          />
-                        : <div className="p-hero__avatar" aria-hidden="true">🧑‍💻</div>
-                    }
-                </div>
-            </div>
-            <div className="p-doodles" aria-hidden="true">
-                <span className="p-doodle p-doodle--1">★</span>
-                <span className="p-doodle p-doodle--2">◆</span>
-                <span className="p-doodle p-doodle--3">●</span>
-                <span className="p-doodle p-doodle--4">▲</span>
-            </div>
-        </section>
-    );
-}
+const checklist = [
+  { done: true,  text: "Ship an AI chat interface with streaming LLM responses", note: "← cut design time 40%!" },
+  { done: true,  text: "Build a verification platform for 10,000+ submissions", note: "6 clients live" },
+  { done: true,  text: "Encrypt files so even the server can't read them", note: "zero-knowledge!" },
+  { done: true,  text: "Get promoted to Senior Engineer", note: "may '24 ☆" },
+  { done: false, text: "Join a team building something ambitious", note: "→ that's where you come in" },
+];
 
+export default function Hero({ profile }: { profile: any }) {
+  return (
+    <section id="hero" className="nb-hero">
+      <span className="nb-stain" aria-hidden="true" />
+      <div className="nb-container">
+        <div className="nb-hero__badge">
+          <span className="nb-hero__spark" aria-hidden="true">✦</span>
+          <strong className="nb-hero__badge-text">Open to Work</strong>
+        </div>
+        <br />
+        <span className="nb-hero__kicker">notebook of a builder ↓</span>
+        <h1 className="nb-hero__title">
+          Hi, I&rsquo;m {profile.name.split(" ")[0]} — I turn messy problems into <mark>shipped software</mark>.
+        </h1>
+        <p className="nb-hero__sub">{profile.bio}</p>
+
+        <div className="nb-hero__grid">
+          <ul className="nb-check-list">
+            {checklist.map((item, i) => (
+              <li key={i}>
+                <span className={`nb-check ${item.done ? "nb-check--done" : ""}`}>
+                  {item.done ? "✓" : ""}
+                </span>
+                <div>
+                  {item.text}
+                  <span className="nb-annot">{item.note}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <figure className="nb-polaroid nb-tape">
+            <div className="nb-polaroid__photo">
+              {profile.profile_image
+                ? <Image
+                    src={profile.profile_image}
+                    alt={profile.name}
+                    width={320}
+                    height={320}
+                    priority
+                  />
+                : <span aria-hidden="true">🧑‍💻</span>
+              }
+            </div>
+            <figcaption>me, running on vibes and plausible deniability</figcaption>
+          </figure>
+        </div>
+
+        <div className="nb-hero__btns">
+          <a href="#projects" className="nb-btn nb-btn--fill">Read the project pages</a>
+          <span className="nb-cv">
+            <a href={profile.cv} download className="nb-btn">Grab my CV</a>
+            {/* <span className="nb-arrow">start here</span> */}
+          </span>
+          <a href="#contact" className="nb-btn">Leave a note</a>
+        </div>
+      </div>
+    </section>
+  );
+}

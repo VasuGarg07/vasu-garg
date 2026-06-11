@@ -1,10 +1,4 @@
 {
-  "meta": {
-    "title": "Vasu Garg — Senior Full Stack Engineer",
-    "description": "Portfolio of Vasu Garg, a Senior Full Stack Engineer with 4+ years building production web applications end-to-end across fintech, compliance, and security.",
-    "url": "https://vasu-garg.vercel.app",
-    "image": "/og-image.png"
-  },
   "profile": {
     "name": "Vasu Garg",
     "title": "Senior Full Stack Engineer",
@@ -80,49 +74,48 @@
       "name": "AI Trading Assistant (uAlgos)",
       "company": "uTrade Solutions",
       "type": "work",
-      "emoji": "🤖",
-      "description": "Delivered the frontend for an AI-powered, chat-based strategy builder — natural-language strategy creation with WebSocket-streamed LLM responses and a custom in-app IDE for editing AI-generated strategy artifacts.",
+      "sketch": "chat",
+      "description": "Delivered an AI-powered, chat-based strategy builder — natural-language strategy creation with WebSocket-streamed LLM responses and a custom in-app IDE for editing AI-generated strategy artifacts.",
       "highlights": [
         "Multi-thread chat with markdown→HTML streamed responses; cut strategy design time ~40%",
         "Calendar-style backtest heatmap (max P/L, win/loss streaks) with trade-level breakdown",
         "Set up CI/CD for the backend — automated test, build, and deploy jobs"
       ],
-      "stack": ["Angular", "TypeScript", "WebSockets", "LLM APIs", "Mixpanel"],
+      "stack": [ "React", "Angular","WebSockets", "LLM APIs", "Mixpanel"],
       "color": "#f0f7ff"
     },
     {
       "name": "eKYC Multi-Vendor Platform",
       "company": "uTrade Solutions",
       "type": "work",
-      "emoji": "🪪",
+      "sketch": "idcard",
       "description": "Built a runtime JSON-configurable KYC platform with RBAC across 4 roles, securing review and approval workflows for 10,000+ submissions across 6+ B2B white-label clients.",
       "highlights": [
         "RBAC dashboard (admin, agent, RM, affiliate) over 10,000+ KYC submissions",
         "Digio + DigiLocker integration for Aadhaar/PAN, eSign, live selfie, and QR handoff — cut manual workload up to 60%",
         "Responsive across devices; sped verification ~30% and lifted satisfaction"
       ],
-      "stack": ["Angular", "TypeScript", "Tailwind CSS", "Firebase Remote Config", "Digio", "DigiLocker"],
+      "stack": ["React", "Node.js", "MongoDB", "Firebase", "Digio", "DigiLocker"],
       "color": "#f5f0ff"
     },
     {
       "name": "Cove Drive — Encrypted Cloud Storage",
       "company": "uTrade Solutions",
       "type": "work",
-      "emoji": "🔐",
+      "sketch": "vault",
       "description": "Built a zero-knowledge cloud storage product with hybrid AES + RSA encryption — files are encrypted client-side end-to-end, so the server never sees plaintext.",
       "highlights": [
         "Hybrid AES (symmetric) + RSA (asymmetric) zero-knowledge model",
         "Password-protected sharing and chunked, resumable multi-file uploads for unstable networks",
         "Clean OOP/SOLID architecture — recognised internally and led to promotion to Senior"
       ],
-      "stack": ["Angular", "TypeScript", "AES/RSA Encryption", "Material UI", "Node.js"],
+      "stack": ["Angular", "Django", "AES/RSA Encryption", "Material UI"],
       "color": "#fff0fa"
     },
     {
       "name": "Sekai",
       "company": "Personal Project",
       "type": "personal",
-      "emoji": "⛩️",
       "image": "/project-sekai.png",
       "description": "Shipped a solo anime catalogue and tracker — browse trending/airing anime, search, and manage a personal watchlist. Live anime data via the AniList GraphQL API, persisted with Firestore and Firebase OAuth, and installable as a PWA.",
       "highlights": [
@@ -139,7 +132,6 @@
       "name": "VasuGarg Labs",
       "company": "Personal Project",
       "type": "personal",
-      "emoji": "🧩",
       "image": "/project-react-lab.png",
       "description": "Built a pnpm + Turborepo monorepo of 13+ independent React apps that share a common UI, auth, and utility layer through local workspace packages — each app builds and deploys to its own Firebase Hosting site.",
       "highlights": [

@@ -1,33 +1,32 @@
 import { MdEmail, MdDownload } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 
 export default function Contact({ profile }: { profile: any }) {
   return (
-    <section id="contact" className="p-section">
-      <div className="p-container">
-        <div className="p-sec-head p-sec-head--center">
-          <span className="p-tag p-tag--pink">Contact</span>
-          <h2 className="p-sec-title">Let's build something! 🚀</h2>
+    <section id="contact" className="nb-section">
+      <div className="nb-container">
+        <div className="nb-sec-head nb-sec-head--center">
+          <span className="nb-page-label">LAST PAGE · CONTACT</span>
+          <h2 className="nb-sec-title">Leave a note <mark>in the margins</mark></h2>
         </div>
-        <div className="p-contact-box">
-          <h3>Say hello 👋</h3>
-          <p>Got a project in mind or just want to connect? I'd love to hear from you!</p>
-          <div className="p-contact-links">
-            <a href={`mailto:${profile.email}`} className="p-c-link">
-              <MdEmail size={20} color="#EA4335" />
+        <div className="nb-card nb-contact-box nb-tape">
+          <h3>say hello ✎</h3>
+          <p>Got a project in mind, a role to fill, or just want to compare notes? I&rsquo;d love to hear from you.</p>
+          <div className="nb-contact-links">
+            <a href={`mailto:${profile.email}`} className="nb-c-link">
+              <MdEmail size={19} color="#b3552d" />
               <span>Email</span>
             </a>
-            <a href={profile.linkedin} target="_blank" rel="noopener" className="p-c-link">
-              <FaLinkedin size={18} color="#0A66C2" />
+            <a href={profile.linkedin} target="_blank" rel="noopener" className="nb-c-link">
+              <FaLinkedin size={17} color="#0A66C2" />
               <span>LinkedIn</span>
             </a>
-            <a href={profile.github} target="_blank" rel="noopener" className="p-c-link">
-              <FaGithub size={18} color="#181717" />
+            <a href={profile.github} target="_blank" rel="noopener" className="nb-c-link">
+              <FaGithub size={17} color="#181717" />
               <span>GitHub</span>
             </a>
-            <a href={profile.cv} download className="p-c-link">
-              <MdDownload size={20} color="#008b2c" />
+            <a href={profile.cv} download className="nb-c-link">
+              <MdDownload size={19} color="#2f7a45" />
               <span>Download CV</span>
             </a>
           </div>
