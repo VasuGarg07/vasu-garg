@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Projects({ projects }: { projects: any[] }) {
   const work     = projects.filter(p => p.type === "work");
   const personal = projects.filter(p => p.type === "personal");
@@ -27,9 +29,14 @@ export default function Projects({ projects }: { projects: any[] }) {
 function ProjectCard({ project: p }: { project: any }) {
   return (
     <div className="p-proj-card">
-      <div className="p-proj-card__top" style={{background: p.color}}>
-        <span>{p.emoji}</span>
-      </div>
+      {p.image
+        ? <div className="p-proj-card__top p-proj-card__top--image">
+            <Image src={p.image} alt={p.name} width={480} height={300} loading="lazy" className="p-proj-card__img" />
+          </div>
+        : <div className="p-proj-card__top" style={{background: p.color}}>
+            <span>{p.emoji}</span>
+          </div>
+      }
       <div className="p-proj-card__body">
         <div className="p-proj-card__chips">
           {p.stack.slice(0,3).map((s: string) => (
@@ -38,6 +45,13 @@ function ProjectCard({ project: p }: { project: any }) {
         </div>
         <h4 className="p-proj-card__title">{p.name}</h4>
         <p className="p-proj-card__desc">{p.description}</p>
+        {p.highlights && (
+          <ul className="p-proj-card__deliverables">
+            {p.highlights.map((h: string, i: number) => (
+              <li key={i}>{h}</li>
+            ))}
+          </ul>
+        )}
         <div className="p-proj-card__links">
           {p.live   && <a href={p.live}   target="_blank" rel="noopener" className="p-proj-link">↗ Demo</a>}
           {p.github && <a href={p.github} target="_blank" rel="noopener" className="p-proj-link">⌥ Code</a>}

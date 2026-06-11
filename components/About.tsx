@@ -14,7 +14,7 @@ export default function About({ profile, stats }: { profile: any; stats: any[] }
               <span className="p-flair__pill p-flair__pill--y">🎯 Problem Solver</span>
               <span className="p-flair__pill p-flair__pill--p">🚀 Fast Learner</span>
               <span className="p-flair__pill p-flair__pill--g">🤝 Team Player</span>
-              <span className="p-flair__pill p-flair__pill--b">💻 Frontend Nerd</span>
+              <span className="p-flair__pill p-flair__pill--b">💻 Full Stack</span>
             </div>
           </div>
           <div className="p-stats__grid">

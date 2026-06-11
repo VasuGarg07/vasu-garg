@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
-import data from "@/data/portfolio.json";
+import data from "@/public/portfolio.json";
 import "./globals.css";
-import "@/styles/playful.css";
-import "@/styles/dark.css";
-import "@/styles/minimal.css";
-import { ThemeProvider } from "@/context/ThemeContext";
-import { ACTIVE_THEME, THEME_COOKIE, type Theme } from "@/config";
 
 export const metadata: Metadata = {
   title: data.meta.title,
@@ -29,15 +23,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const cookieStore = await cookies();
-  const initialTheme = (cookieStore.get(THEME_COOKIE)?.value ?? ACTIVE_THEME) as Theme;
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <ThemeProvider initialTheme={initialTheme}>{children}</ThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

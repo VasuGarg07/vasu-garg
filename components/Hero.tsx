@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero({ profile }: { profile: any }) {
     return (
         <section id="hero" className="p-hero">
@@ -19,10 +21,19 @@ export default function Hero({ profile }: { profile: any }) {
                             <a href="#contact" className="p-btn p-btn--outline">Say hello →</a>
                         </div>
                     </div>
-                    {profile.avatar
-                        ? <img src={profile.avatar} alt={profile.name} className="p-hero__avatar" />
+                    {profile.profile_image
+                        ? <Image
+                            src={profile.profile_image}
+                            alt={profile.name}
+                            width={320}
+                            height={320}
+                            sizes="(min-width: 640px) clamp(160px, 26vw, 320px), 0px"
+                            loading="lazy"
+                            className="p-hero__avatar"
+                          />
                         : <div className="p-hero__avatar" aria-hidden="true">🧑‍💻</div>
-                    }        </div>
+                    }
+                </div>
             </div>
             <div className="p-doodles" aria-hidden="true">
                 <span className="p-doodle p-doodle--1">★</span>
