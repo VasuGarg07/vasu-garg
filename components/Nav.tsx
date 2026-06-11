@@ -1,12 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const links = ["About","Skills","Experience","Projects","Education","Contact"];
+const links = ["About", "Skills", "Experience", "Projects", "Education", "Contact"];
 
 export default function Nav({ profile }: { profile: any }) {
   const [open, setOpen] = useState(false);
 
-  // Prevent body scroll when drawer is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -14,11 +13,12 @@ export default function Nav({ profile }: { profile: any }) {
 
   return (
     <>
-      <nav className="p-nav">
-        <div className="p-nav__logo">{profile.name.split(" ")[0]} ✦</div>
+      <nav className="nb-nav">
+        <div className="nb-nav__logo">
+          {profile.name.split(" ")[0]}&rsquo;s <em>notebook</em> ✎
+        </div>
 
-        {/* Desktop links — hidden on mobile via CSS */}
-        <ul className="p-nav__links">
+        <ul className="nb-nav__links">
           {links.map(l => (
             <li key={l}>
               <a href={`#${l.toLowerCase()}`}>{l}</a>
@@ -26,9 +26,8 @@ export default function Nav({ profile }: { profile: any }) {
           ))}
         </ul>
 
-        {/* Hamburger — visible on mobile only */}
         <button
-          className={`p-nav__burger ${open ? "p-nav__burger--open" : ""}`}
+          className={`nb-nav__burger ${open ? "nb-nav__burger--open" : ""}`}
           onClick={() => setOpen(!open)}
           aria-label={open ? "Close menu" : "Open menu"}
         >
@@ -38,20 +37,14 @@ export default function Nav({ profile }: { profile: any }) {
         </button>
       </nav>
 
-      {/* Mobile drawer — rendered outside nav so it overlays everything */}
       {open && (
-        <div className="p-nav__drawer" role="dialog" aria-modal="true">
-          {/* Close button */}
-          <button className="p-nav__drawer-close" onClick={() => setOpen(false)} aria-label="Close menu">
+        <div className="nb-nav__drawer" role="dialog" aria-modal="true">
+          <button className="nb-nav__drawer-close" onClick={() => setOpen(false)} aria-label="Close menu">
             ✕
           </button>
-          <div className="p-nav__drawer-links">
+          <div className="nb-nav__drawer-links">
             {links.map(l => (
-              <a
-                key={l}
-                href={`#${l.toLowerCase()}`}
-                onClick={() => setOpen(false)}
-              >
+              <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}>
                 {l}
               </a>
             ))}

@@ -80,7 +80,7 @@
       "name": "AI Trading Assistant (uAlgos)",
       "company": "uTrade Solutions",
       "type": "work",
-      "emoji": "🤖",
+      "sketch": "chat",
       "description": "Delivered the frontend for an AI-powered, chat-based strategy builder — natural-language strategy creation with WebSocket-streamed LLM responses and a custom in-app IDE for editing AI-generated strategy artifacts.",
       "highlights": [
         "Multi-thread chat with markdown→HTML streamed responses; cut strategy design time ~40%",
@@ -94,7 +94,7 @@
       "name": "eKYC Multi-Vendor Platform",
       "company": "uTrade Solutions",
       "type": "work",
-      "emoji": "🪪",
+      "sketch": "idcard",
       "description": "Built a runtime JSON-configurable KYC platform with RBAC across 4 roles, securing review and approval workflows for 10,000+ submissions across 6+ B2B white-label clients.",
       "highlights": [
         "RBAC dashboard (admin, agent, RM, affiliate) over 10,000+ KYC submissions",
@@ -108,7 +108,7 @@
       "name": "Cove Drive — Encrypted Cloud Storage",
       "company": "uTrade Solutions",
       "type": "work",
-      "emoji": "🔐",
+      "sketch": "vault",
       "description": "Built a zero-knowledge cloud storage product with hybrid AES + RSA encryption — files are encrypted client-side end-to-end, so the server never sees plaintext.",
       "highlights": [
         "Hybrid AES (symmetric) + RSA (asymmetric) zero-knowledge model",
@@ -122,7 +122,6 @@
       "name": "Sekai",
       "company": "Personal Project",
       "type": "personal",
-      "emoji": "⛩️",
       "image": "/project-sekai.png",
       "description": "Shipped a solo anime catalogue and tracker — browse trending/airing anime, search, and manage a personal watchlist. Live anime data via the AniList GraphQL API, persisted with Firestore and Firebase OAuth, and installable as a PWA.",
       "highlights": [
@@ -139,7 +138,6 @@
       "name": "VasuGarg Labs",
       "company": "Personal Project",
       "type": "personal",
-      "emoji": "🧩",
       "image": "/project-react-lab.png",
       "description": "Built a pnpm + Turborepo monorepo of 13+ independent React apps that share a common UI, auth, and utility layer through local workspace packages — each app builds and deploys to its own Firebase Hosting site.",
       "highlights": [

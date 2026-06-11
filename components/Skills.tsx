@@ -36,28 +36,27 @@ const SKILL_MAP: Record<string, { icon: IconType; color: string; bg: string }> =
   "Postman":        { icon: SiPostman,       color: "#fff", bg: "#FF6C37" },
 };
 
-const colors = ["y", "p", "b", "g", "o"];
-
 export default function Skills({ skills }: { skills: any[] }) {
   return (
-    <section id="skills" className="p-section section-reveal">
-      <div className="p-container">
-        <div className="p-sec-head">
-          <span className="p-tag p-tag--blue">Skills</span>
-          <h2 className="p-sec-title">My toolkit 🧰</h2>
+    <section id="skills" className="nb-section">
+      <div className="nb-container">
+        <div className="nb-sec-head">
+          <span className="nb-page-label">PAGE 02 · TOOLKIT</span>
+          <h2 className="nb-sec-title">Tools <mark>I reach for</mark></h2>
+          <span className="nb-sec-note">the well-worn ones, anyway ✎</span>
         </div>
-        {skills.map((group, gi) => (
-          <div key={group.category} className="p-skill-group">
-            <h3 className="p-skill-group__title">{group.category}</h3>
-            <div className="p-skill-cloud">
-              {group.items.map((item: string, ii: number) => {
+        {skills.map((group) => (
+          <div key={group.category} className="nb-skill-group">
+            <h3 className="nb-skill-group__title">{group.category}</h3>
+            <div className="nb-skill-cloud">
+              {group.items.map((item: string) => {
                 const s = SKILL_MAP[item];
                 const Icon = s?.icon;
                 return (
-                  <span key={item} className={`p-sk p-sk--${colors[(gi + ii) % colors.length]}`}>
+                  <span key={item} className="nb-sk">
                     {Icon && (
-                      <span className="p-sk__icon" style={{ background: s.bg }}>
-                        <Icon size={18} color={s.color} />
+                      <span className="nb-sk__icon" style={{ background: s.bg }}>
+                        <Icon size={16} color={s.color} />
                       </span>
                     )}
                     {item}
