@@ -1,12 +1,8 @@
 # Vasu Garg — Portfolio
 
-Personal portfolio showcasing my work, skills, and experience as a Senior Frontend Developer.
+An interactive 3D portfolio: a dusk walk through torii gates to a shrine. Built with **three.js** and **Vite**.
 
 🌐 **Live:** [vasu-garg.vercel.app](https://vasu-garg.vercel.app)
-
----
-
-Built with **Next.js 16**, **TypeScript**, and **React 19**. Deployed on Vercel.
 
 ### Running locally
 
@@ -15,7 +11,19 @@ npm install
 npm run dev
 ```
 
----
+### Build
+
+```bash
+npm run build
+npm run preview
+```
+
+### Structure
+
+- `src/data/portfolio.json` — all content (profile, skills, experience, projects)
+- `src/scene/` — three.js scene: stage, sky, world, props, petals
+- `src/ui/` — HTML cards, modal, input handling
+- `public/` — favicon, og-image, résumé
 
 ### Connect
 
