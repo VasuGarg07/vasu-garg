@@ -2,8 +2,8 @@
   "profile": {
     "name": "Vasu Garg",
     "title": "Senior Full Stack Engineer",
-    "tagline": "I build fast, reliable, production-grade web apps — front to back.",
-    "bio": "Senior Full Stack Engineer with 4+ years shipping production web applications end-to-end across fintech, compliance, and security. I own the full lifecycle — from data models and REST/WebSocket APIs to state architecture and accessible UI.",
+    "tagline": "I build fast, reliable, production-grade web apps from front to back.",
+    "bio": "Senior Full Stack Engineer with 4+ years shipping production web applications end-to-end across fintech, compliance, and security. I own the full lifecycle, from data models and REST/WebSocket APIs to state architecture and accessible UI.",
     "bio2": "I care about scalable architecture, clean SOLID code, and interfaces that make complex, data-dense systems feel simple. Off the clock I'm exploring anime ⛩️ or games 🎮 and building side projects.",
     "location": "Punjab, India",
     "email": "vasugarg6656@gmail.com",
@@ -15,8 +15,8 @@
   },
   "stats": [
     { "value": "4+", "label": "Years Exp." },
-    { "value": "1K+", "label": "New Signups/Qtr" },
-    { "value": "10K+", "label": "KYC Flows Shipped" }
+    { "value": "30+", "label": "GitHub Repos" },
+    { "value": "5+", "label": "Products built 0 to 1" }
   ],
   "skills": [
     {
@@ -25,15 +25,15 @@
     },
     {
       "category": "Frontend",
-      "items": [ "Angular", "React", "Next.js", "Redux", "Tailwind CSS"]
+      "items": [ "Angular", "React", "Next.js", "React-Native", "Tailwind CSS"]
     },
     {
       "category": "Backend & APIs",
       "items": ["Node.js", "Express", "FastAPI", "REST APIs", "WebSockets", "GraphQL"]
     },
     {
-      "category": "Data & Cloud",
-      "items": ["MongoDB", "Firebase", "AWS"]
+      "category": "Database & Cloud",
+      "items": ["PostgreSQL", "MongoDB", "Google Firebase", "AWS"]
     },
     {
       "category": "DevOps & Tools",
@@ -42,17 +42,28 @@
   ],
   "experience": [
     {
+      "role": "Senior Product Engineer",
+      "company": "Shuru Technologies",
+      "location": "Remote, India",
+      "period": "Jul 2026 - Present",
+      "current": true,
+      "highlights": [
+        "Built a teacher community platform for a client, with a post feed, threaded comments, profiles, groups, and role-based content moderation.",
+        "Enabled teachers to monetize and discover learning content by shipping in-app purchases for paid courses and a searchable, filterable resource-sharing module."
+      ]
+    },
+    {
       "role": "Senior Software Engineer",
       "company": "uTrade Solutions",
       "location": "Punjab, India",
-      "period": "May 2024 - Present",
-      "current": true,
+      "period": "May 2024 - Jul 2026",
+      "current": false,
       "highlights": [
-        "Shipped AI-powered, real-time interfaces — multi-thread chat with streaming LLM responses, an in-app strategy editor, and data-dense dashboards — now serving 500+ active users.",
-        "Drove ~1,000+ new signups in a single quarter by designing event-tracking schemas and wiring up Mixpanel, Meta Pixel, and Google Analytics to surface the insights that reshaped activation flows.",
-        "Cut application load time ~40% through code-splitting, lazy loading, and state-management optimization.",
-        "Built a resumable Python pipeline that migrated 50K+ documents across AWS S3 buckets with checkpoint-based restart — zero rework after interruptions.",
-        "Mentored 2 junior engineers on review practices and component design."
+        "Led frontend for real-time AI interfaces (multi-thread streaming chat, in-app editors, and data-dense dashboards) used by 500+ active users.",
+        "Migrated a legacy Angular monolith to React micro-frontends in a pnpm and Turborepo monorepo, with end-to-end type safety and faster, cached builds.",
+        "Helped drive 1,000+ new signups in one quarter by designing event-tracking schemas and integrating Mixpanel, Meta Pixel, and Google Analytics across products to guide activation flows.",
+        "Cut application load time by ~40% through code-splitting, lazy loading, and leaner state management.",
+        "Mentored 2 junior engineers on code review practices and component design."
       ]
     },
     {
@@ -62,10 +73,9 @@
       "period": "Jul 2022 - May 2024",
       "current": false,
       "highlights": [
-        "Owned full-stack delivery of a MERN admin platform end-to-end — REST APIs, MongoDB schemas, RBAC flows, and React UIs — partnering directly with product and compliance teams.",
-        "Shrank bundle size 35% (500 KB → 350 KB) by refactoring duplicated code into reusable components, measurably improving load times across products.",
-        "Hardened the API layer with JWT auth, request validation, and modular routing in Node/Express/TypeScript, built on SOLID principles and established design patterns.",
-        "Promoted to Senior Engineer after delivering Cove Drive — a zero-knowledge encrypted storage product — on clean OOP architecture."
+        "Owned end-to-end delivery of a MERN admin platform, including REST APIs, MongoDB schemas, RBAC flows, and React UIs, working directly with product and compliance teams.",
+        "Reduced bundle size by 35% (from 500 KB to 350 KB) by refactoring duplicated code into reusable components, speeding up load times across products.",
+        "Hardened the Node.js, Express, and TypeScript API layer with JWT auth, request validation, and modular routing, following SOLID principles and proven design patterns."
       ]
     }
   ],
@@ -75,13 +85,13 @@
       "company": "uTrade Solutions",
       "type": "work",
       "sketch": "chat",
-      "description": "Delivered an AI-powered, chat-based strategy builder — natural-language strategy creation with WebSocket-streamed LLM responses and a custom in-app IDE for editing AI-generated strategy artifacts.",
+      "description": "Delivered an AI-powered, chat-based strategy builder with natural-language strategy creation, WebSocket-streamed LLM responses, and a custom in-app IDE for editing AI-generated strategy artifacts.",
       "highlights": [
-        "Multi-thread chat with markdown→HTML streamed responses; cut strategy design time ~40%",
-        "Calendar-style backtest heatmap (max P/L, win/loss streaks) with trade-level breakdown",
-        "Set up CI/CD for the backend — automated test, build, and deploy jobs"
+        "Cut strategy design time by ~40% with multi-thread chat that streams responses rendered from Markdown to HTML.",
+        "Built a calendar-style backtest heatmap (max P/L, win/loss streaks) with a trade-level breakdown.",
+        "Set up backend CI/CD with automated test, build, and deploy jobs."
       ],
-      "stack": [ "React", "Angular","WebSockets", "LLM APIs", "Mixpanel"],
+      "stack": [ "React", "Angular", "Micro-Frontends", "Micro-services", "WebSockets", "LLM APIs", "Analytics"],
       "color": "#f0f7ff"
     },
     {
@@ -91,25 +101,25 @@
       "sketch": "idcard",
       "description": "Built a runtime JSON-configurable KYC platform with RBAC across 4 roles, securing review and approval workflows for 10,000+ submissions across 6+ B2B white-label clients.",
       "highlights": [
-        "RBAC dashboard (admin, agent, RM, affiliate) over 10,000+ KYC submissions",
-        "Digio + DigiLocker integration for Aadhaar/PAN, eSign, live selfie, and QR handoff — cut manual workload up to 60%",
-        "Responsive across devices; sped verification ~30% and lifted satisfaction"
+        "Built an RBAC dashboard for admins, agents, RMs, and affiliates covering 10,000+ KYC submissions.",
+        "Cut manual workload by up to 60% by integrating Digio and DigiLocker for Aadhaar/PAN checks, eSign, live selfie, and QR handoff.",
+        "Sped up verification by ~30% and improved user satisfaction with a responsive, cross-device UI."
       ],
-      "stack": ["React", "Node.js", "MongoDB", "Firebase", "Digio", "DigiLocker"],
+      "stack": ["React", "Node.js", "MongoDB", "PostgreSQL", "Firebase", "DigiLocker"],
       "color": "#f5f0ff"
     },
     {
-      "name": "Cove Drive — Encrypted Cloud Storage",
+      "name": "Cove Drive: Encrypted Cloud Storage",
       "company": "uTrade Solutions",
       "type": "work",
       "sketch": "vault",
-      "description": "Built a zero-knowledge cloud storage product with hybrid AES + RSA encryption — files are encrypted client-side end-to-end, so the server never sees plaintext.",
+      "description": "Built a zero-knowledge cloud storage product with hybrid AES + RSA encryption. Files are encrypted end-to-end on the client, so the server never sees plaintext.",
       "highlights": [
-        "Hybrid AES (symmetric) + RSA (asymmetric) zero-knowledge model",
-        "Password-protected sharing and chunked, resumable multi-file uploads for unstable networks",
-        "Clean OOP/SOLID architecture — recognised internally and led to promotion to Senior"
+        "Designed a zero-knowledge model combining AES (symmetric) and RSA (asymmetric) encryption.",
+        "Added password-protected sharing and chunked, resumable multi-file uploads for unstable networks.",
+        "Built on a clean OOP and SOLID architecture that was recognised internally and led to my promotion to Senior."
       ],
-      "stack": ["Angular", "Django", "AES/RSA Encryption", "Material UI"],
+      "stack": ["Angular", "Django", "PostgreSQL", "AES/RSA Encryption", "AWS"],
       "color": "#fff0fa"
     },
     {
@@ -117,11 +127,11 @@
       "company": "Personal Project",
       "type": "personal",
       "image": "/project-sekai.png",
-      "description": "Shipped a solo anime catalogue and tracker — browse trending/airing anime, search, and manage a personal watchlist. Live anime data via the AniList GraphQL API, persisted with Firestore and Firebase OAuth, and installable as a PWA.",
+      "description": "Shipped a solo anime catalogue and tracker for browsing trending and airing anime, searching, and managing a personal watchlist. It pulls live data from the AniList GraphQL API, persists it with Firestore and Firebase OAuth, and installs as a PWA.",
       "highlights": [
-        "Watchlist + tracking persisted in Firestore with Firebase auth",
-        "Redux Toolkit + TanStack Query for client and server-state caching",
-        "Installable PWA — works offline-friendly on desktop and mobile"
+        "Persisted watchlists and progress tracking in Firestore with Firebase Auth.",
+        "Cached client and server state with Redux Toolkit and TanStack Query.",
+        "Shipped as an installable, offline-friendly PWA for desktop and mobile."
       ],
       "stack": ["React", "TypeScript", "Redux Toolkit", "TanStack Query", "Firebase", "PWA"],
       "live": "https://sekai-arcadia.web.app/",
@@ -133,11 +143,11 @@
       "company": "Personal Project",
       "type": "personal",
       "image": "/project-react-lab.png",
-      "description": "Built a pnpm + Turborepo monorepo of 13+ independent React apps that share a common UI, auth, and utility layer through local workspace packages — each app builds and deploys to its own Firebase Hosting site.",
+      "description": "Built a pnpm + Turborepo monorepo of 13+ independent React apps that share a common UI, auth, and utility layer through local workspace packages. Each app builds and deploys to its own Firebase Hosting site.",
       "highlights": [
-        "Shared ui / shared / auth workspace packages with JWT (access + refresh) via axios interceptors",
-        "Formlyst — visual builder rendering multi-step forms at runtime from stored config; Pokeverse — virtualized Pokédex with turn-based battles",
-        "Turborepo-cached builds; per-app deploys to independent Firebase sites"
+        "Built shared UI, utility, and auth packages, with JWT access and refresh tokens handled by Axios interceptors.",
+        "Includes Formlyst, a visual builder that renders multi-step forms at runtime from stored config, and Pokeverse, a virtualized Pokédex with turn-based battles.",
+        "Cached builds with Turborepo and deployed each app to its own Firebase site."
       ],
       "stack": ["React 19", "TypeScript", "Turborepo", "Redux Toolkit", "TanStack Query", "Tailwind CSS"],
       "live": "https://vasugarg-labs.web.app/",
@@ -147,8 +157,8 @@
   ],
   "education": [
     {
-      "degree": "Bachelor of Engineering — Computer Science",
-      "institution": "Chandigarh College of Engineering and Technology",
+      "degree": "Bachelor of Engineering in Computer Science",
+      "institution": "Panjab University",
       "location": "Chandigarh, India",
       "period": "2018 - 2022",
       "emoji": "🎓"

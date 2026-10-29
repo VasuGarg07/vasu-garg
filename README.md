@@ -1,6 +1,6 @@
-# Vasu Garg — Portfolio
+# Vasu Garg: Portfolio
 
-An interactive 3D portfolio: a dusk walk through torii gates to a shrine. Built with **three.js** and **Vite**.
+An interactive 3D portfolio: a developer's desk at night. Click the monitor, photo frame, bookshelf, corkboard or phone to explore. Built with **three.js** and **Vite**.
 
 🌐 **Live:** [vasu-garg.vercel.app](https://vasu-garg.vercel.app)
 
@@ -20,10 +20,10 @@ npm run preview
 
 ### Structure
 
-- `src/data/portfolio.json` — all content (profile, skills, experience, projects)
-- `src/scene/` — three.js scene: stage, sky, world, props, petals
-- `src/ui/` — HTML cards, modal, input handling
-- `public/` — favicon, og-image, résumé
+- `src/data/portfolio.json`: all content (profile, skills, experience, projects)
+- `src/scene/`: three.js scene: stage (renderer, post-processing), room, desk, screen (animated editor + phone), procedural textures
+- `src/ui/`: side panel content, nav, hotspot markers
+- `public/`: favicon, og-image, résumé
 
 ### Connect
 
