@@ -11,7 +11,7 @@
     "github": "https://github.com/VasuGarg07",
     "cv": "/Vasu_Garg_Resume.pdf",
     "profile_image": "/profile_image.webp",
-    "available": true
+    "available": false
   },
   "stats": [
     { "value": "4+", "label": "Years Exp." },

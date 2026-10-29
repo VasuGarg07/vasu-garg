@@ -77,7 +77,7 @@ export function buildSections({ profile: me, stats, skills, experience, projects
       object: 'Phone',
       html: `
         <h2>Let's talk</h2>
-        <p class="lead">I'm open to senior full-stack roles and interesting problems. The fastest way to reach me is email.</p>
+        <p class="lead">${me.available ? "I'm open to senior full-stack roles and interesting problems." : "I'm always happy to talk about engineering, side projects, and interesting problems."} The fastest way to reach me is email.</p>
         <a class="btn primary wide" href="mailto:${esc(me.email)}">${esc(me.email)}</a>
         <div class="links">
           ${link(me.linkedin, 'LinkedIn ↗')}

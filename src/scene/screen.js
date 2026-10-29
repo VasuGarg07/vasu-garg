@@ -17,7 +17,7 @@ function source({ profile, skills }) {
     `  location: '${profile.location}',`,
     `  frontend: [${list(skills[1].items)}],`,
     `  backend: [${list(skills[2].items)}],`,
-    `  openToWork: ${profile.available},`,
+    ...(profile.available ? ['  openToWork: true,'] : []),
     '};',
     '',
     'export async function ship(idea: Idea) {',
@@ -274,9 +274,10 @@ export function createPhoneScreen(profile) {
     ctx.fillText('now', W - 72, 370);
     ctx.fillStyle = 'rgba(255,255,255,0.92)';
     ctx.font = `17px ${SANS}`;
-    ctx.fillText('Open to new opportunities.', 100, 398);
-    ctx.fillText("Let's build something great", 100, 424);
-    ctx.fillText('together. Say hello! 👋', 100, 450);
+    const message = profile.available
+      ? ['Open to new opportunities.', "Let's build something great", 'together. Say hello! 👋']
+      : ['Thanks for stopping by!', 'Always happy to chat about', 'engineering & side projects. 👋'];
+    message.forEach((line, i) => ctx.fillText(line, 100, 398 + i * 26));
 
     ctx.fillStyle = 'rgba(255,255,255,0.18)';
     [70, W - 70].forEach((x) => {
