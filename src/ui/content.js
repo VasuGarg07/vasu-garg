@@ -11,7 +11,7 @@ export function buildSections({ profile: me, stats, skills, experience, projects
   return {
     about: {
       label: 'About',
-      object: 'Photo frame',
+      object: 'Home',
       html: `
         <div class="who">
           <img src="${esc(asset(me.profile_image))}" alt="${esc(me.name)}" width="88" height="88">
@@ -25,13 +25,13 @@ export function buildSections({ profile: me, stats, skills, experience, projects
     },
     experience: {
       label: 'Experience',
-      object: 'Corkboard',
+      object: 'Career line',
       html: `
         <h2>Experience</h2>
         <ol class="timeline">${experience
           .map(
-            (e) => `
-          <li>
+            (e, i) => `
+          <li data-item="${i}">
             <div class="row"><h3>${esc(e.role)}</h3>${e.current ? '<span class="badge">Current</span>' : ''}</div>
             <p class="muted small">${esc(e.company)} · ${esc(e.period)}</p>
             ${list(e.highlights)}
@@ -43,13 +43,13 @@ export function buildSections({ profile: me, stats, skills, experience, projects
     },
     projects: {
       label: 'Projects',
-      object: 'Monitor',
+      object: 'Downtown',
       html: `
         <h2>Selected projects</h2>
         ${projects
           .map(
-            (p) => `
-          <article class="project">
+            (p, i) => `
+          <article class="project" data-item="${i}">
             ${p.image ? `<img src="${esc(asset(p.image))}" alt="${esc(p.name)} screenshot" loading="lazy">` : ''}
             <p class="eyebrow">${esc(p.company)} · ${p.type === 'work' ? 'Professional' : 'Personal'}</p>
             <h3>${esc(p.name)}</h3>
@@ -67,14 +67,14 @@ export function buildSections({ profile: me, stats, skills, experience, projects
     },
     skills: {
       label: 'Skills',
-      object: 'Bookshelf',
+      object: 'Data center',
       html: `
         <h2>Skills</h2>
-        ${skills.map((s) => `<section class="skill"><h3>${esc(s.category)}</h3>${chips(s.items)}</section>`).join('')}`,
+        ${skills.map((s, i) => `<section class="skill" data-item="${i}"><h3>${esc(s.category)}</h3>${chips(s.items)}</section>`).join('')}`,
     },
     contact: {
       label: 'Contact',
-      object: 'Phone',
+      object: 'Radio tower',
       html: `
         <h2>Let's talk</h2>
         <p class="lead">${me.available ? "I'm open to senior full-stack roles and interesting problems." : "I'm always happy to talk about engineering, side projects, and interesting problems."} The fastest way to reach me is email.</p>

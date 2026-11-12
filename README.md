@@ -1,6 +1,6 @@
 # Vasu Garg: Portfolio
 
-An interactive 3D portfolio: a developer's desk at night. Click the monitor, photo frame, bookshelf, corkboard or phone to explore. Built with **three.js** and **Vite**.
+An interactive 3D portfolio: a low-poly city on a floating island. Each district is a section (home, career line, downtown, data center, radio tower). Drag to look around, click a building to explore. Built with **three.js**, **camera-controls** and **Vite**.
 
 🌐 **Live:** [vasu-garg.vercel.app](https://vasu-garg.vercel.app)
 
@@ -21,8 +21,8 @@ npm run preview
 ### Structure
 
 - `src/data/portfolio.json`: all content (profile, skills, experience, projects)
-- `src/scene/`: three.js scene: stage (renderer, post-processing), room, desk, screen (animated editor + phone), procedural textures
-- `src/ui/`: side panel content, nav, hotspot markers
+- `src/scene/`: three.js scene: stage (renderer, lights, post-processing), island (terrain, roads, trees, clouds), city (districts, train, cars), procedural textures
+- `src/ui/`: side panel content, nav, district labels
 - `public/`: favicon, og-image, résumé
 
 ### Connect
