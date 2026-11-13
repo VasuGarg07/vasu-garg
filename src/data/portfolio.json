@@ -11,6 +11,7 @@
     "github": "https://github.com/VasuGarg07",
     "cv": "/Vasu_Garg_Resume.pdf",
     "profile_image": "/profile_image.webp",
+    "domains": "Fintech, Compliance, Security",
     "available": false
   },
   "stats": [
@@ -44,6 +45,7 @@
     {
       "role": "Senior Product Engineer",
       "company": "Shuru Technologies",
+      "logo": "/shuruapp_logo.jpg",
       "location": "Remote, India",
       "period": "Jul 2026 - Present",
       "current": true,
@@ -55,6 +57,7 @@
     {
       "role": "Senior Software Engineer",
       "company": "uTrade Solutions",
+      "logo": "/utrade-logo.jpg",
       "location": "Punjab, India",
       "period": "May 2024 - Jul 2026",
       "current": false,
@@ -69,6 +72,7 @@
     {
       "role": "Software Engineer",
       "company": "uTrade Solutions",
+      "logo": "/utrade-logo.jpg",
       "location": "Punjab, India",
       "period": "Jul 2022 - May 2024",
       "current": false,
@@ -159,6 +163,7 @@
     {
       "degree": "Bachelor of Engineering in Computer Science",
       "institution": "Panjab University",
+      "logo": "/pu-logo.png",
       "location": "Chandigarh, India",
       "period": "2018 - 2022",
       "emoji": "🎓"

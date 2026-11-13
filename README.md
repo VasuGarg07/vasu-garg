@@ -1,6 +1,6 @@
 # Vasu Garg: Portfolio
 
-An interactive 3D portfolio: a low-poly city on a floating island. Each district is a section (home, career line, downtown, data center, radio tower). Drag to look around, click a building to explore. Built with **three.js**, **camera-controls** and **Vite**.
+A fast, single-page portfolio. All content lives in `src/data/portfolio.json` and is rendered with plain JavaScript and **Vite**; skill logos come from **simple-icons**.
 
 🌐 **Live:** [vasu-garg.vercel.app](https://vasu-garg.vercel.app)
 
@@ -21,9 +21,11 @@ npm run preview
 ### Structure
 
 - `src/data/portfolio.json`: all content (profile, skills, experience, projects)
-- `src/scene/`: three.js scene: stage (renderer, lights, post-processing), island (terrain, roads, trees, clouds), city (districts, train, cars), procedural textures
-- `src/ui/`: side panel content, nav, district labels
-- `public/`: favicon, og-image, résumé
+- `src/main.js`: renders every section from the data file
+- `public/skills/`: skill logos from Devicon. Run `npm run icons` to refresh them to the latest release
+- `src/icons.js`: skill logos (simple-icons), UI icons and the site logo mark
+- `src/style.css`: all styles, responsive down to 320 px
+- `public/`: favicon, og-image, CV
 
 ### Connect
 

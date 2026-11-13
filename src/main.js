@@ -1,208 +1,173 @@
 import './style.css';
-import * as THREE from 'three';
-import CameraControls from 'camera-controls';
-import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import data from './data/portfolio.json';
-import { createStage, isTouch } from './scene/stage.js';
-import { createIsland, createClouds } from './scene/island.js';
-import { createCity } from './scene/city.js';
-import { SANS, MONO } from './scene/textures.js';
-import { createUi, sideMedia } from './ui/ui.js';
-import { ORDER, asset } from './ui/content.js';
+import { skillIcon, icon, logoMark } from './icons.js';
 
-CameraControls.install({ THREE });
+const { profile: me, stats, skills, experience, projects, education } = data;
 
-const OVERVIEW = { target: new THREE.Vector3(0, -1.6, 0), dir: new THREE.Vector3(1, 0.88, 1).normalize(), size: [12, 10] };
-const OVERVIEW_TALL = { target: new THREE.Vector3(0, -0.8, 0), dir: new THREE.Vector3(1, 1.75, 1).normalize(), size: [10.9, 10.4] };
-const loader = document.getElementById('loader');
-const header = document.getElementById('top');
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const asset = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '');
+const ext = (href, text, cls, iconName = 'arrow') => `<a class="${cls}" href="${esc(href)}" target="_blank" rel="noopener">${iconName === 'arrow' ? '' : icon(iconName)}${text}${iconName === 'arrow' ? icon('arrow', 14) : ''}</a>`;
+const tags = (items) => `<div class="tags">${items.map((t) => `<span>${esc(t)}</span>`).join('')}</div>`;
+const heading = (n, title) => `<div class="heading"><span class="num">${n}</span><h2>${title}</h2></div>`;
 
-let navigate = () => {};
-const ui = createUi(data, { go: (id, item) => navigate(id, item) });
+const words = me.tagline.split(' ');
+const tagline = `${esc(words.slice(0, -3).join(' '))} <span class="accent">${esc(words.slice(-3).join(' '))}</span>`;
+const work = projects.filter((p) => p.type === 'work');
+const personal = projects.filter((p) => p.type !== 'work');
 
-function hideLoader() {
-  loader.classList.add('done');
-  setTimeout(() => loader.remove(), 800);
-}
+const header = `
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top">${logoMark(42)}<span><b>${esc(me.name)}</b><small>Full stack engineer</small></span></a>
+    <nav aria-label="Sections" class="nav">
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    ${ext(asset(me.cv), 'CV', 'btn-dark')}
+  </div>
+</header>`;
 
-async function loadFonts() {
-  try {
-    await Promise.race([
-      Promise.all([document.fonts.load(`700 30px ${SANS}`), document.fonts.load(`500 16px ${MONO}`)]),
-      new Promise((resolve) => setTimeout(resolve, 2500)),
-    ]);
-  } catch (e) {}
-}
+const hero = `
+<section id="top" class="hero">
+  <div class="wrap hero-row">
+    <div class="hero-copy">
+      ${me.available ? '<span class="badge open"><i></i>Open to new opportunities</span>' : ''}
+      <h1>${tagline}</h1>
+      <p class="lead">${esc(me.bio)}</p>
+      <div class="actions">
+        <a class="btn-primary" href="mailto:${esc(me.email)}">Get in touch</a>
+        <a class="btn-outline" href="#projects">See my work</a>
+        <span class="divider" aria-hidden="true"></span>
+        <a class="btn-icon" href="${esc(me.github)}" target="_blank" rel="noopener" aria-label="GitHub">${icon('github', 20)}</a>
+        <a class="btn-icon" href="${esc(me.linkedin)}" target="_blank" rel="noopener" aria-label="LinkedIn">${icon('linkedin', 20)}</a>
+      </div>
+    </div>
+    <div class="id-card">
+      <img src="${esc(asset(me.profile_image))}" alt="Portrait of ${esc(me.name)}" width="400" height="320">
+      <dl>
+        <div><dt>Role</dt><dd>${esc(me.title)}</dd></div>
+        <div><dt>Based in</dt><dd>${esc(me.location)}</dd></div>
+        <div><dt>Experience</dt><dd>${esc(stats[0].value)} years</dd></div>
+        <div><dt>Domains</dt><dd>${esc(me.domains)}</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
 
-async function start() {
-  await loadFonts();
+<section class="stats" aria-label="Key numbers">
+  <div class="wrap stats-row">
+    ${stats.map((s) => `<div><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join('')}
+  </div>
+</section>`;
 
-  const noAO = [];
-  let stage;
-  try {
-    stage = createStage(noAO);
-  } catch (e) {
-    ui.flat();
-    hideLoader();
-    return;
-  }
-  const { renderer, scene, camera, composer, labels, lowerQuality } = stage;
-  createIsland(scene);
-  const city = createCity(scene, data, noAO, asset(data.profile.profile_image));
-  const spots = [];
-  scene.traverse((o) => {
-    if (o.userData.hotspot) spots.push(o);
-    if (!o.isMesh) return;
-    o.castShadow = !noAO.includes(o);
-    o.receiveShadow = true;
-  });
-  const moveClouds = createClouds(scene);
+const skillsSection = `
+<section id="skills" class="wrap section">
+  ${heading('01', 'Skills')}
+  ${skills
+    .map(
+      (g) => `
+  <div class="skill-row">
+    <h3>${esc(g.category)}</h3>
+    <ul class="chips">${g.items.map((name) => `<li>${skillIcon(name)}${esc(name)}</li>`).join('')}</ul>
+  </div>`,
+    )
+    .join('')}
+</section>`;
 
-  ORDER.forEach((id) => {
-    const label = new CSS2DObject(ui.label(id, city.views[id].label));
-    label.position.copy(city.views[id].anchor);
-    scene.add(label);
-  });
+const orgRow = (logo, name, period, location) => `
+    <div class="job-meta">
+      <img class="org-logo" src="${esc(asset(logo))}" alt="${esc(name)} logo" width="56" height="56" loading="lazy">
+      <b>${esc(name)}</b>
+      <span class="mono">${esc(period)}</span>
+      <span class="muted">${esc(location)}</span>
+    </div>`;
 
-  const controls = new CameraControls(camera, renderer.domElement);
-  controls.smoothTime = 0.5;
-  controls.draggingSmoothTime = 0.15;
-  controls.minPolarAngle = 0.5;
-  controls.maxPolarAngle = 1.32;
-  controls.minDistance = 6;
-  controls.maxDistance = 170;
-  controls.dollySpeed = 0.5;
-  controls.mouseButtons.right = CameraControls.ACTION.NONE;
-  controls.mouseButtons.middle = CameraControls.ACTION.NONE;
-  controls.touches.two = CameraControls.ACTION.TOUCH_DOLLY;
-  controls.touches.three = CameraControls.ACTION.NONE;
+const experienceSection = `
+<section id="experience" class="wrap section">
+  ${heading('02', 'Experience')}
+  ${experience
+    .map(
+      (e) => `
+  <article class="job">
+    ${orgRow(e.logo, e.company, e.period, e.location)}
+    <div class="job-body">
+      <div class="job-title"><h3>${esc(e.role)}</h3>${e.current ? '<span class="tag-current">Current</span>' : ''}</div>
+      <ul>${e.highlights.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>
+    </div>
+  </article>`,
+    )
+    .join('')}
+  ${education
+    .map(
+      (ed) => `
+  <article class="job">
+    ${orgRow(ed.logo, ed.institution, ed.period, ed.location)}
+    <div class="job-body">
+      <span class="mono">Education</span>
+      <h3>${esc(ed.degree)}</h3>
+    </div>
+  </article>`,
+    )
+    .join('')}
+</section>`;
 
-  let active = null;
-  let dragging = false;
-  const offset = new THREE.Vector2();
-  const goalOffset = new THREE.Vector2();
+const projectsSection = `
+<section id="projects" class="wrap section">
+  ${heading('03', 'Selected projects')}
+  <p class="group-label">Professional work</p>
+  <div class="cards">
+    ${work
+      .map(
+        (p) => `
+    <article class="card">
+      <h3>${esc(p.name)}</h3>
+      <p>${esc(p.description)}</p>
+      ${tags(p.stack)}
+    </article>`,
+      )
+      .join('')}
+  </div>
+  <p class="group-label">Side projects, live and open source</p>
+  <div class="cards">
+    ${personal
+      .map(
+        (p) => `
+    <article class="card feature">
+      ${p.image ? `<img src="${esc(asset(p.image))}" alt="${esc(p.name)} screenshot" loading="lazy" width="640" height="360">` : ''}
+      <div class="feature-body">
+        <h3>${esc(p.name)}</h3>
+        <p>${esc(p.description)}</p>
+        ${tags(p.stack)}
+        <div class="actions">
+          ${p.live ? ext(p.live, 'Live site', 'btn-primary small') : ''}
+          ${p.github ? ext(p.github, 'Source', 'btn-outline small') : ''}
+        </div>
+      </div>
+    </article>`,
+      )
+      .join('')}
+  </div>
+</section>`;
 
-  function applyView(transition) {
-    const w = innerWidth;
-    const h = innerHeight;
-    camera.aspect = w / h;
-    camera.fov = w / h < 1 ? 32 : 25;
-    const view = active ? city.views[active] : w / h < 1 ? OVERVIEW_TALL : OVERVIEW;
-    const side = sideMedia.matches;
-    const size = active ? ui.panelSize() : 0;
-    const bottom = side ? 0 : size;
-    const top = header.offsetHeight + (active ? 0 : 30);
-    const tv = Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2);
-    const dist = (h / tv) * Math.max(view.size[0] / (side ? w - size : w), view.size[1] / (h - bottom - top));
-    const p = view.target.clone().addScaledVector(view.dir, dist);
-    controls.normalizeRotations();
-    controls.setLookAt(p.x, p.y, p.z, view.target.x, view.target.y, view.target.z, transition);
-    goalOffset.set(side ? size / 2 : 0, (bottom - top) / 2);
-  }
+const contactSection = `
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="mono dim">04 / Contact</span>
+    <h2>Let's build something <span class="accent-light">great.</span></h2>
+    <p>${me.available ? "I'm open to senior full-stack roles and interesting problems. The fastest way to reach me is email." : "I'm always happy to talk about engineering, side projects, and interesting problems. Feel free to connect via Email or LinkedIn."}</p>
+    <div class="actions">
+      <a class="btn-primary" href="mailto:${esc(me.email)}">${icon('mail')}${esc(me.email)}</a>
+      ${ext(me.linkedin, 'LinkedIn', 'btn-ghost', 'linkedin')}
+      ${ext(me.github, 'GitHub', 'btn-ghost', 'github')}
+      ${ext(asset(me.cv), 'CV (PDF)', 'btn-ghost', 'file')}
+    </div>
+    <footer class="footer">
+      <a class="brand light" href="#top">${logoMark(34, true)}<b>${esc(me.name)}</b></a>
+      <span class="mono dim">${icon('pin', 14)}${esc(me.location)}</span>
+    </footer>
+  </div>
+</section>`;
 
-  navigate = (id, item) => {
-    active = city.views[id] ? id : null;
-    if (active) ui.show(active, item);
-    else ui.hide();
-    applyView(true);
-    history.replaceState(null, '', active ? `#${active}` : location.pathname + location.search);
-  };
-
-  applyView(false);
-  controls.rotate(-0.9, -0.12, false);
-  controls.dolly(-22, false);
-  controls.update(0);
-  const initial = location.hash.slice(1);
-  if (ORDER.includes(initial)) navigate(initial);
-  else applyView(true);
-  addEventListener('resize', () => applyView(true));
-
-  const raycaster = new THREE.Raycaster();
-  const ndc = new THREE.Vector2();
-  let pointerAt = null;
-  let pressAt = null;
-  let fingers = 0;
-  let hovered = null;
-
-  function pick(x, y) {
-    ndc.set((x / innerWidth) * 2 - 1, -(y / innerHeight) * 2 + 1);
-    raycaster.setFromCamera(ndc, camera);
-    let o = raycaster.intersectObject(scene, true)[0]?.object;
-    while (o && !o.userData.hotspot) o = o.parent;
-    return o ? o.userData.hotspot : null;
-  }
-
-  controls.addEventListener('controlstart', () => {
-    dragging = true;
-    ui.hideHint();
-  });
-  controls.addEventListener('controlend', () => (dragging = false));
-  addEventListener('pointermove', (e) => {
-    pointerAt = e.pointerType === 'mouse' && e.target === renderer.domElement ? [e.clientX, e.clientY] : null;
-  });
-  renderer.domElement.addEventListener('pointerdown', (e) => {
-    fingers++;
-    pressAt = fingers === 1 ? [e.clientX, e.clientY] : null;
-  });
-  renderer.domElement.addEventListener('pointercancel', () => {
-    fingers = 0;
-    pressAt = null;
-  });
-  renderer.domElement.addEventListener('pointerup', (e) => {
-    fingers = Math.max(0, fingers - 1);
-    const press = pressAt;
-    pressAt = null;
-    if (!press || Math.hypot(e.clientX - press[0], e.clientY - press[1]) > (e.pointerType === 'mouse' ? 6 : 12)) return;
-    const spot = pick(e.clientX, e.clientY);
-    if (spot) navigate(spot.id, spot.item);
-    else if (active) navigate(null);
-  });
-
-  const born = performance.now();
-  let last = born;
-  let time = 0;
-  let frames = 0;
-  let sample = { t: 0, n: 0 };
-  let level = 0;
-
-  function frame(now) {
-    requestAnimationFrame(frame);
-    const raw = (now - last) / 1000;
-    const dt = Math.min(raw, 0.1);
-    last = now;
-    time += dt;
-
-    if (now - born > 3000 && level < 2) {
-      sample.t += raw;
-      sample.n++;
-      if (sample.t > 2) {
-        if (sample.n / sample.t < 40) level = lowerQuality();
-        sample = { t: 0, n: 0 };
-      }
-    }
-
-    controls.update(dt);
-    offset.lerp(goalOffset, 1 - Math.exp(-dt * 4));
-    camera.setViewOffset(innerWidth, innerHeight, offset.x, offset.y, innerWidth, innerHeight);
-    camera.updateProjectionMatrix();
-    camera.updateMatrixWorld();
-
-    if (!isTouch) {
-      const spot = pointerAt && !dragging ? pick(...pointerAt) : null;
-      hovered = spot ? spot.object : null;
-      renderer.domElement.style.cursor = spot ? 'pointer' : '';
-      if (spot) ui.showTip(`${spot.label} · click to open`, ...pointerAt);
-      else ui.hideTip();
-    }
-    spots.forEach((o) => o.scale.setScalar(THREE.MathUtils.damp(o.scale.x, o === hovered ? 1.07 : 1, 12, dt)));
-
-    city.update(dt, time);
-    moveClouds(time);
-    composer.render();
-    labels.render(scene, camera);
-    if (++frames === 3) hideLoader();
-  }
-  requestAnimationFrame(frame);
-}
-
-start();
+document.getElementById('app').innerHTML = header + `<main>${hero}${skillsSection}${experienceSection}${projectsSection}</main>` + contactSection;
