@@ -127,6 +127,22 @@
       "color": "#fff0fa"
     },
     {
+      "name": "Formlyst",
+      "company": "Personal Project",
+      "type": "personal",
+      "image": "/project-formlyst.webp",
+      "description": "Built a visual builder for multi-step forms. Drag fields, sections and steps into place, set validation rules, publish a share link, and collect responses in a per-form dashboard. Forms are rendered at runtime from the stored config.",
+      "highlights": [
+        "Designed a drag-and-drop builder with steps, sections and typed fields, each with its own validation rules.",
+        "Moved the backend from Express and MongoDB to Firebase Auth and Firestore, enforcing form ownership with security rules instead of server code.",
+        "Let anyone fill a published form without signing in, with a response dashboard and per-submission detail for the owner."
+      ],
+      "stack": ["React 19", "TypeScript", "Firebase", "Firestore", "dnd-kit", "Redux Toolkit", "TanStack Query"],
+      "live": "https://flyst.web.app",
+      "github": "https://github.com/VasuGarg07/formlyst",
+      "color": "#f0f7ff"
+    },
+    {
       "name": "Sekai",
       "company": "Personal Project",
       "type": "personal",
@@ -143,14 +159,30 @@
       "color": "#fff8f0"
     },
     {
+      "name": "Pokeverse",
+      "company": "Personal Project",
+      "type": "personal",
+      "image": "/project-pokeverse.webp",
+      "description": "Built a Pokédex and battle simulator on top of PokéAPI. Browse a virtualized Pokédex, open detail pages with stats, evolutions, moves and sprites, then assemble a team and play turn-based battles.",
+      "highlights": [
+        "Rendered the Pokédex with infinite loading and virtualization so long lists stay smooth.",
+        "Built a multi-screen battle flow covering setup, team selection, loading and the battle itself, with state held in Redux Toolkit.",
+        "Charted base stats with Recharts and cached API responses with TanStack Query."
+      ],
+      "stack": ["React 19", "TypeScript", "Redux Toolkit", "TanStack Query", "Recharts", "Tailwind CSS"],
+      "live": "https://pokeverse2.vercel.app",
+      "github": "https://github.com/VasuGarg07/pokeverse",
+      "color": "#fff0f0"
+    },
+    {
       "name": "VasuGarg Labs",
       "company": "Personal Project",
       "type": "personal",
       "image": "/project-react-lab.png",
-      "description": "Built a pnpm + Turborepo monorepo of 13+ independent React apps that share a common UI, auth, and utility layer through local workspace packages. Each app builds and deploys to its own Firebase Hosting site.",
+      "description": "Built a pnpm + Turborepo monorepo of 13 independent React apps that share a common UI, auth, and utility layer through local workspace packages. Each app builds and deploys to its own Firebase Hosting site.",
       "highlights": [
         "Built shared UI, utility, and auth packages, with JWT access and refresh tokens handled by Axios interceptors.",
-        "Includes Formlyst, a visual builder that renders multi-step forms at runtime from stored config, and Pokeverse, a virtualized Pokédex with turn-based battles.",
+        "Includes Jobscape, a two-sided job board, Blogify, a rich-text blogging platform, and BudgetBuddy, an expense tracker with charts.",
         "Cached builds with Turborepo and deployed each app to its own Firebase site."
       ],
       "stack": ["React 19", "TypeScript", "Turborepo", "Redux Toolkit", "TanStack Query", "Tailwind CSS"],
