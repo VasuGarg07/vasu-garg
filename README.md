@@ -2,7 +2,7 @@
 
 A fast, single-page portfolio. All content lives in `src/data/portfolio.json` and is rendered with plain JavaScript and **Vite**; skill logos come from **simple-icons**.
 
-🌐 **Live:** [vasu-garg.vercel.app](https://vasu-garg.vercel.app)
+🌐 **Live:** [vasugarg07.vercel.app](https://vasugarg07.vercel.app)
 
 ### Running locally
 
